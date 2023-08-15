@@ -1,2 +1,13 @@
-# blue gravity programmer
- 
+# Blue Gravity Studios - Programmer Interview Task
+---
+## **Getting ready**
+
+1. **Read the [instructions](https://bluegravity.notion.site/Programmer-Interview-54d0673473414d42b6a6ca7e5d90d5a9)** over and over again. Also decided I'll be writing this proccess from the beginning as I work on it to make sure I don't miss anything.
+2. **Initialize empty repo** - Create the 'dev' branch. On personal projects I tend to use the main branch only to store the release versions of the app. The .gitignore should be the first commit, since sending the Unity Project before the .gitignore can make some folders to be stored in the repo forever when they're actually disposable or created locally. I usually just get my own custom .gitignore file from past projects
+4. **Add empty Unity project** to the repo (version 2021.3.2f1 as required) - already removing/disabling from the default/built-in configs and packages that won't be used
+5. **Read the [instructions](https://bluegravity.notion.site/Programmer-Interview-54d0673473414d42b6a6ca7e5d90d5a9) again** to make sure I'm not missing anything
+6. **Decide the priority of every feature** - this is the most important part, actually, since the time is limited. I'll be working on the following features, in this specific order: character, movement, item management, shop (buying/selling), interface
+7. **Deciding art assets** that I'll use for this task (clothes, movement animations etc). It'll be better to work with the final art from the beginning instead of having to spend more time replacing the assets. Looked into the LSW art on it's [**Steam page**](https://store.steampowered.com/app/1429880/Little_Sim_World/) and [**website**](https://littlesim.world/) and also checked the [**Little Sim World Art**](https://ronnelinfante.com/p/ronnin/026e2942) and [**Little Sim World UI**](https://ronnelinfante.com/p/ronnin/024a079c) articles by [**ronnelinfante**](https://ronnelinfante.com/) to get an idea of how it currently looks in-game. I thought about using free demo art packs by either [**Shubibubi**](https://shubibubi.itch.io/) or [**Seliel the Shaper**](https://seliel-the-shaper.itch.io/) since their free art packs had a wider variety of assets, **BUT**, instead... Since the goal is to mimic LSW, I thought I could use...Hear me out... **the actual LSW art assets**! 😏 Why not? 😁 For that, I've downloaded LSW v0.31z04 (pre-alpha) from [**this non-suspicious 100% safe website**](https://kemono.party/patreon/user/2983655/post/56552647) and then used [**AssetStudio**](https://github.com/Perfare/AssetStudio) to scrape the art assets. PS: Don't hate me guys! It's only for this specific task, I swear.
+
+## **Development**
+1. **Create character** - I couldn't scrape the animations (sadly). Since I'll have to get the chars animated I decided to remove the limbs, so that's easier and faster to move on with. I always take the capsule as a base size for characters and realized the default size might be too big for it so I'm scaling it all down - using the pixels per unit import settings. Just created the walk animation as well.
