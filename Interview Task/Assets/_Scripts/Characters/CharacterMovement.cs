@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Windows;
 
 namespace LittleSimWorld.Characters
 {
@@ -21,6 +20,7 @@ namespace LittleSimWorld.Characters
                 }
             }
         }
+        [SerializeField, Range(.1f, 5)] protected float speed = 2;
         [SerializeField] Vector3 newVelocity;
         #endregion Move
 
@@ -32,10 +32,8 @@ namespace LittleSimWorld.Characters
             get => _canRotate;
             set => _canRotate = value;
         }
-        [SerializeField] GameObject frontView;
-        [SerializeField] GameObject backView;
-        [SerializeField] GameObject rightView;
 
+        [SerializeField] Directions<GameObject> views;
         [SerializeField] Directions facingDirection = Directions.Down;
         #endregion Rotate
 
@@ -44,7 +42,6 @@ namespace LittleSimWorld.Characters
         #region References
         [Header("References")]
         [SerializeField] Rigidbody rb;
-        [SerializeField, Range(.1f, 5)] protected float characterControllerSpeed = 2;
         #endregion References
 
 
@@ -71,7 +68,7 @@ namespace LittleSimWorld.Characters
                 return;
 
             //newVelocity = input * Time.deltaTime * characterControllerSpeed;
-            newVelocity = input * characterControllerSpeed;
+            newVelocity = input * speed;
         }
         void SetVelocity(Vector3 newVelocity)
         {
@@ -99,54 +96,37 @@ namespace LittleSimWorld.Characters
             else
                 Rotate(velocity.z > 0 ? Directions.Up : Directions.Down);
         }
-        public void Rotate(Directions direction)
+        public void Rotate(Directions newDirection)
         {
             if (!canRotate)
                 return;
 
-            if (facingDirection == direction)
+            if (facingDirection == newDirection)
                 return;
 
             //disable previous facing direction
-            GetViewGO(facingDirection).SetActive(false);
+            views.Get(facingDirection).SetActive(false);
 
 
             //enable current facing direction
-            if (direction == Directions.Left || direction == Directions.Right)
-                SideViewFlip(direction);
+            GameObject newSide = views.Get(newDirection);
+            SideViewFlip(newDirection);
 
-            GetViewGO(direction).SetActive(true);
+            newSide.SetActive(true);
 
-            facingDirection = direction;
-        }
-        GameObject GetViewGO(Directions direction)
-        {
-            //maybe could switch to 'GameObject[] views' and use the values of Directions as index for the [];
-            switch (direction)
-            {
-                case Directions.Right:
-                case Directions.Left:
-                    return rightView;
-
-                case Directions.Up:
-                    return backView;
-
-                case Directions.Down:
-                    return frontView;
-            }
-
-            return frontView;
+            facingDirection = newDirection;
         }
         void SideViewFlip(Directions direction)
         {
-            Vector3 currentScale = rightView.transform.localScale;
+            //default scale is 1 (turned to right)
+            GameObject sideView = views.Get(direction);
+            Vector3 currentScale = sideView.transform.localScale;
 
             if (direction == Directions.Left)
-                rightView.transform.localScale = new Vector3(-1, currentScale.y, currentScale.z);
+                sideView.transform.localScale = new Vector3(-1, currentScale.y, currentScale.z);
             else
-                rightView.transform.localScale = new Vector3(1, currentScale.y, currentScale.z);
+                sideView.transform.localScale = new Vector3(1, currentScale.y, currentScale.z);
         }
-
     }
 
     public interface IMove

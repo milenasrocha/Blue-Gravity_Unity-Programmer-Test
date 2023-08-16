@@ -914,9 +914,11 @@ MonoBehaviour:
   _canMove: 1
   newVelocity: {x: 0, y: 0, z: 0}
   _canRotate: 1
-  frontView: {fileID: 2371924778930056297}
-  backView: {fileID: 2844264663510133747}
-  rightView: {fileID: 256034677377410709}
+  views:
+    up: {fileID: 2844264663510133747}
+    down: {fileID: 2371924778930056297}
+    left: {fileID: 0}
+    right: {fileID: 256034677377410709}
   facingDirection: 1
   rb: {fileID: 4463628667673311403}
   characterControllerSpeed: 3
