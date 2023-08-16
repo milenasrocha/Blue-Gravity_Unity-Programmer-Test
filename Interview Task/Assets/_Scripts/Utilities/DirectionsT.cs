@@ -4,7 +4,7 @@ using UnityEngine;
 namespace LittleSimWorld
 {
     [Serializable]
-    public class Directions<T> where T : UnityEngine.Object
+    public class Directions<T> where T : UnityEngine.Object //had to restrict it to Object. Without the restriction the null checks always return false
     {
         public T up;
         public T down;
