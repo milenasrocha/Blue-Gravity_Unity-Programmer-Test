@@ -11,4 +11,5 @@
 
 ## **Development**
 1. **Create character** - I always take capsule as a reference for the size of the characters and realized the art assets default size might be too big for it, so I'm scaling it all down - using the pixels per unit import settings. I couldn't scrape the animations (sadly). Since I'll have to get the chars animated I decided to remove the limbs, so that's easier and faster to move on with.
-2. **Input and movement**
+2. **Input and movement** I've added the new input system to the project. For the movement I've decided to use Rigibody and to set the velocity directly, (at least for now) so I can move on quicker to the other parts of the task. By the way, leaving some comments here cause I might get back to this soon.
+Got the walk animation done (super easy). I've also decided I'll use composition for basically every mechanic I'll be working on, so I've created the Movement and Animation components that work together with the main Character 'pawn' (base) class. Locally (in the same object) the Components communicate through interfaces. Other GOs can communicate using the public delegates, fields, methods, etc.

@@ -12,38 +12,54 @@ namespace LittleSimWorld.Characters
             {
                 _canMove = value;
 
-                if (!_canMove)
+                if (!value)
                 {
-                    characterController.attachedRigidbody.velocity = Vector3.zero;
+                    rb.velocity = Vector3.zero;
                 }
             }
         }
+        [SerializeField] Vector3 newVelocity;
 
         IMove[] IMoves = new IMove[0];
 
-
-        [SerializeField] CharacterController characterController;
-        [SerializeField, Range(.5f, 5)] protected float characterControllerSpeed = 2;
+        [SerializeField] Rigidbody rb;
+        [SerializeField, Range(.1f, 5)] protected float characterControllerSpeed = 2;
 
         #region Unity Callbacks
         protected void Awake()
         {
             IMoves = GetComponents<IMove>();
         }
+
+        void OnDisable()
+        {
+            newVelocity = Vector3.zero;
+        }
+
+        void FixedUpdate()
+        {
+            SetVelocity(newVelocity);
+        }
         #endregion
 
-
-        public virtual void Move(Vector3 input)
+        public void MoveRequest(Vector3 input)
         {
             if (!canMove)
                 return;
 
-            Vector3 value = input * Time.deltaTime * characterControllerSpeed;
+            //newVelocity = input * Time.deltaTime * characterControllerSpeed;
+            newVelocity = input * characterControllerSpeed;
+        }
+        public void SetVelocity(Vector3 newVelocity)
+        {
+            if (!canMove)
+                return;
 
-            characterController.Move(value);
+            //rb.AddForce(newVelocity, ForceMode.VelocityChange);
+            rb.velocity = newVelocity;
 
             foreach (IMove IMove in IMoves)
-                IMove.OnSpeedChanged(value);
+                IMove.OnSpeedChanged(newVelocity);
         }
     }
 
