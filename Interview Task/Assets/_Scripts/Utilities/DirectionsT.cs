@@ -4,21 +4,23 @@ using UnityEngine;
 namespace LittleSimWorld
 {
     [Serializable]
-    public class Directions<T> where T : UnityEngine.Object //had to restrict it to Object. Without the restriction the null checks always return false
+    public class Views<T> where T : UnityEngine.Object //had to restrict it to Object. Without the restriction the null checks always return false
     {
-        public T up;
-        public T down;
+        public T front;
+        public T back;
         public T left;
         public T right;
 
         public T Get(Directions direction) => Get(direction, out bool _);
-        public T Get(Directions direction, out bool isOpposite)
+        public T Get(Directions direction, out bool isOpposite) => Get(view: (Views)direction, out isOpposite);
+        public T Get(Views view) => Get(view, out bool _);
+        public T Get(Views view, out bool isOpposite)
         {
             isOpposite = false;
 
-            switch (direction)
+            switch (view)
             {
-                case Directions.Right:
+                case Views.Right:
                     if (right == null)
                     {
                         isOpposite = true;
@@ -26,7 +28,7 @@ namespace LittleSimWorld
                     }
                     else
                         return right;
-                case Directions.Left:
+                case Views.Left:
                     if (left == null)
                     {
                         isOpposite = true;
@@ -37,14 +39,14 @@ namespace LittleSimWorld
                         return left;
                     }
 
-                case Directions.Up:
-                    return up;
+                case Views.Front:
+                    return front;
 
-                case Directions.Down:
-                    return down;
+                case Views.Back:
+                    return back;
             }
 
-            return up;
+            return front;
         }
     }
 }

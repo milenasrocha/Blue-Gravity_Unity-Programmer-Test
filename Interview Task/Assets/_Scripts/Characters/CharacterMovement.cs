@@ -33,7 +33,7 @@ namespace LittleSimWorld.Characters
             set => _canRotate = value;
         }
 
-        [SerializeField] Directions<GameObject> views;
+        [SerializeField] Views<GameObject> views;
         [SerializeField] Directions facingDirection = Directions.Down;
         #endregion Rotate
 
