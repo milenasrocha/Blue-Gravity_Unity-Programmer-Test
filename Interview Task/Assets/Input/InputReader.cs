@@ -9,6 +9,9 @@ namespace LittleSimWorld
         [SerializeField] PlayerInput playerInput;
         Dictionary<string, InputAction> inputActions;
 
+        public static Vector2 Movement { get; private set; }
+        public void OnMovement(InputAction.CallbackContext context) => Movement = context.ReadValue<Vector2>();
+
         #region Unity Callbacks
         protected override void Awake()
         {

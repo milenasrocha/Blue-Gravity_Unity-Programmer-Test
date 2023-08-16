@@ -1,5 +1,5 @@
 {
-    "name": "New Controls",
+    "name": "InputActions",
     "maps": [
         {
             "name": "Gameplay",
@@ -21,7 +21,7 @@
                     "id": "22d549a9-c2a7-4831-a43a-d935939b1e21",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": false,
@@ -30,7 +30,7 @@
                 {
                     "name": "WASD [Keyboard]",
                     "id": "2ae8139a-33e8-48de-b79e-7c4ad299731f",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
