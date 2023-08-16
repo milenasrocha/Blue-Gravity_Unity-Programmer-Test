@@ -33,7 +33,7 @@ namespace LittleSimWorld.Characters
             //if (movementInput.magnitude <= 0)
             //    return;
 
-            character.mover.MoveRequest(new Vector3(movementInput.x, 0, movementInput.y));
+            character.mover.Move(new Vector3(movementInput.x, 0, movementInput.y));
         }
         public void LockMovementInput() => movementInputIsLocked = true;
         public void UnlockMovementInput() => movementInputIsLocked = false;
