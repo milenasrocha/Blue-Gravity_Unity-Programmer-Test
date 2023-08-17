@@ -39,6 +39,9 @@ namespace LittleSimWorld.Characters
                 Rotate(speed);
         }
 
+        //all this View and rotate functions should move to another class, and maybe make this one inherit from it
+        //that's because this is not the only rotatable object, really. and they would all share this same functions
+
         public void Rotate(Vector3 velocity)
         {
             if (velocity.x != 0)
@@ -46,6 +49,7 @@ namespace LittleSimWorld.Characters
             else
                 Rotate(velocity.z > 0 ? Directions.Up : Directions.Down);
         }
+        public void Rotate(Views newView) => Rotate(newDirection: (Directions) newView);
         public void Rotate(Directions newDirection)
         {
             if (!canRotate)
@@ -59,22 +63,48 @@ namespace LittleSimWorld.Characters
 
             //enable current facing direction
             GameObject newSide = views.Get(newDirection, out bool isOpposite);
-            SideViewFlip(newDirection);
+            ManageViewFlip(newSide, isOpposite, newDirection);
 
             newSide.SetActive(true);
 
             facingDirection = newDirection;
         }
-        void SideViewFlip(Directions direction)
+        void ManageViewFlip(GameObject view, bool isOpposite, Directions direction)
         {
-            //default scale is 1 (turned to right)
-            GameObject sideView = views.Get(direction);
-            Vector3 currentScale = sideView.transform.localScale;
-
-            if (direction == Directions.Left)
-                sideView.transform.localScale = new Vector3(-1, currentScale.y, currentScale.z);
+            if (isOpposite) //no need to get the opposite and flip
+            {
+                if (direction == Directions.Left || direction == Directions.Right)
+                    FlipXView(view);
+                else //Directions.Up ||Directions.Down
+                    FlipYView(view);
+            }
             else
-                sideView.transform.localScale = new Vector3(1, currentScale.y, currentScale.z);
+            {
+                if (direction == Directions.Left || direction == Directions.Right)
+                    FlipResetXView(view);
+                else //Directions.Up ||Directions.Down
+                    FlipResetYView(view);
+            }
+        }
+        void FlipResetXView(GameObject view)
+        {
+            Vector3 viewLocalScale = view.transform.localScale;
+            view.transform.localScale = new Vector3(Mathf.Abs(viewLocalScale.x), viewLocalScale.y, viewLocalScale.z);
+        }
+        void FlipXView(GameObject view)
+        {
+            Vector3 viewLocalScale = view.transform.localScale;
+            view.transform.localScale = new Vector3(Mathf.Abs(viewLocalScale.x) * -1, viewLocalScale.y, viewLocalScale.z);
+        }
+        void FlipResetYView(GameObject view)
+        {
+            Vector3 viewLocalScale = view.transform.localScale;
+            view.transform.localScale = new Vector3(viewLocalScale.x, Mathf.Abs(viewLocalScale.y), viewLocalScale.z);
+        }
+        void FlipYView(GameObject view)
+        {
+            Vector3 viewLocalScale = view.transform.localScale;
+            view.transform.localScale = new Vector3(viewLocalScale.x, Mathf.Abs(viewLocalScale.y) * -1, viewLocalScale.z);
         }
 
 
