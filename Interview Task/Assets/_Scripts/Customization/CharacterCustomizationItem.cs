@@ -7,7 +7,7 @@ namespace LittleSimWorld.Characters
     [Serializable]
     public abstract class CharacterCustomizationItem
     {
-        public string name; //I'll be using this as dictionary keys
+        public string id; //I'll be using this as dictionary keys
         public Sprite icon; //it seems in the game all the icons are just the front view
         public Views<Sprite> views;
         public int price; //this shouldnt be here. items not encessarily have prices, only when theyre at the store

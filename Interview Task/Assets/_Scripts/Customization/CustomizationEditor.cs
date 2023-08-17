@@ -1,4 +1,6 @@
+using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace LittleSimWorld.Characters
@@ -35,14 +37,23 @@ namespace LittleSimWorld.Characters
         public Dictionary<string, Glasses> glasses;
         
         [SerializeField] List<Top> _tops;
-        public Dictionary<string, Top> _top;
+        public Dictionary<string, Top> tops;
 
-        //Test
-        public CharacterView characterView;
 
-        public void Equip(int index)
+        protected override void Awake()
         {
-            _hairs[index].ApplyTo(characterView);
+            base.Awake();
+
+            hairs = _hairs.ToDictionary(item => item.id, item => item);
+            facialHairs = _facialHairs.ToDictionary(item => item.id, item => item);
+            heads = _heads.ToDictionary(hair => hair.id, hair => hair);
+            eyes = _eyes.ToDictionary(item => item.id, item => item);
+            mouths = _mouths.ToDictionary(item => item.id, item => item);
+            blushes = _blushes.ToDictionary(item => item.id, item => item);
+
+            hats = _hats.ToDictionary(item => item.id, item => item);
+            glasses = _glasses.ToDictionary(item => item.id, item => item);
+            tops = _tops.ToDictionary(item => item.id, item => item);
         }
     }
 }
