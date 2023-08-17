@@ -7,6 +7,7 @@ namespace LittleSimWorld
     {
         [SerializeField] CurrencyHolder currencyHolder;
         [Space]
+        [SerializeField] GameObject canvas;
         [SerializeField] TextMeshProUGUI amount;
 
         void Start()

@@ -6,11 +6,13 @@ namespace LittleSimWorld
     {
         [SerializeField] Shop shop;
         [Space]
-        [SerializeField] GameObject whole;
+        [SerializeField] GameObject canvas;
 
         void Start()
         {
-            shop.onEnableStateChanged += whole.SetActive;
+            shop.onInteract.AddListener((character) => canvas.SetActive(true));
+            shop.onInteractionStopped.AddListener((character) => canvas.SetActive(false));
         }
+        public void Close() => shop.Close();
     }
 }
