@@ -1,4 +1,4 @@
-#![header](https://github.com/milenasrocha/blue-gravity-programmer/assets/67220184/71d22289-f6e2-473b-8227-43187befeaa6)
+![header](https://github.com/milenasrocha/blue-gravity-programmer/assets/67220184/71d22289-f6e2-473b-8227-43187befeaa6)
  Blue Gravity Studios - Programmer Interview Task
 ---
 ## **Getting ready**
