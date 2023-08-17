@@ -4,7 +4,12 @@ namespace LittleSimWorld.Characters
 {
     public class PlayerController : Singleton<PlayerController>
     {
-        [SerializeField] Character character;
+        [SerializeField] Character _character;
+        public Character character
+        {
+            get => _character;
+            private set => _character = value;
+        }
 
         #region Movement
         [Header("Movement")]
