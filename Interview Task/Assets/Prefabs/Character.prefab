@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 9066944947031904579}
   - component: {fileID: 4463628667673311403}
   - component: {fileID: 6534864714351990754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7b4691f457f7b4295476abfd2d7535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mover: {fileID: 3962881842169002760}
+  mover: {fileID: 0}
 --- !u!114 &3962881842169002760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canMove: 1
-  speed: 2
+  speed: 3
   newVelocity: {x: 0, y: 0, z: 0}
   rb: {fileID: 4463628667673311403}
 --- !u!114 &5885721224963813299
