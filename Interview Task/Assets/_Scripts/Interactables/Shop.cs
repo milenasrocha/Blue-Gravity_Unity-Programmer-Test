@@ -1,11 +1,10 @@
-using UnityEngine;
+using System;
 
 namespace LittleSimWorld
 {
     public class Shop : Interactable
     {
-        [SerializeField] GameObject UI;
-
+        public Action<bool> onEnableStateChanged;
 
         //can open the shop UI by calling it in script (on Interact()) OR you can fill in the UnityEvent on inspector
         void Awake()
@@ -18,7 +17,7 @@ namespace LittleSimWorld
         void Close() => SwitchState(false);
         void SwitchState(bool open)
         {
-            UI.SetActive(open);
+            onEnableStateChanged.Invoke(open);
         }
     }
 }
