@@ -76,5 +76,19 @@ namespace LittleSimWorld.Characters
             else
                 sideView.transform.localScale = new Vector3(1, currentScale.y, currentScale.z);
         }
+
+
+        public void EquipHair(string id) => CustomizationEditor.Instance.hairs[id].ApplyTo(this);
+        public void EquipFacialHair(string id) => CustomizationEditor.Instance.facialHairs[id].ApplyTo(this);
+        public void EquipHead(string id) => CustomizationEditor.Instance.heads[id].ApplyTo(this);
+        public void EquipEyes(string id) => CustomizationEditor.Instance.eyes[id].ApplyTo(this);
+        public void EquipMouth(string id) => CustomizationEditor.Instance.mouths[id].ApplyTo(this);
+        public void EquipBlushes(string id) => CustomizationEditor.Instance.blushes[id].ApplyTo(this);
+
+        public void EquipHat(string id) => CustomizationEditor.Instance.hats[id].ApplyTo(this);
+        public void EquipGlasses(string id) => CustomizationEditor.Instance.glasses[id].ApplyTo(this);
+        public void EquipTop(string id) => CustomizationEditor.Instance.tops[id].ApplyTo(this);
+
+        //TODO: Add methods to remove items as well
     }
 }
