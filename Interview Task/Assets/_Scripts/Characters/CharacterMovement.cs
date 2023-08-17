@@ -39,6 +39,10 @@ namespace LittleSimWorld.Characters
             IMoves = GetComponents<IMove>();
         }
 
+        void Start()
+        {
+            GetComponent<Character>().mover = this;
+        }
         void OnDisable()
         {
             newVelocity = Vector3.zero;
@@ -72,7 +76,7 @@ namespace LittleSimWorld.Characters
             foreach (IMove IMove in IMoves)
                 IMove.OnVelocityChanged(newVelocity);
         }
-        //TODO: MoveTo(Vector3)
+        //TODO: MoveTo(Vector3 position)
     }
 
     public interface IMove
