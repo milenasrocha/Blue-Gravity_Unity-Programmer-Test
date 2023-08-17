@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace LittleSimWorld
@@ -9,8 +10,13 @@ namespace LittleSimWorld
         public int amount
         {
             get => _amount;
-            private set=> _amount = value;
+            private set
+            {
+                _amount = value;
+                onValueChanged.Invoke(amount);
+            }
         }
+        public Action<int> onValueChanged;
 
         public void AddAmount(int amount)
         {
