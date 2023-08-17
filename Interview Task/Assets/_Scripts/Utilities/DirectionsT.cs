@@ -70,6 +70,28 @@ namespace LittleSimWorld
 
             return front;
         }
+        
+        public T GetOpposite(Directions direction) => GetOpposite(view: (Views)direction);
+        public T GetOpposite(Views view)
+        {
+            switch (view)
+            {
+                case Views.Right:
+                    return left;
+
+                case Views.Left:
+                    return right;
+
+                case Views.Front:
+                    return back;
+
+                case Views.Back:
+                    return front;
+            }
+
+            return back;
+        }
+
         public IEnumerable<T> GetAll(Views view)
         {
             return new List<T>() { front, back, left, right };
