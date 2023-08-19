@@ -5,8 +5,6 @@ Logs/
 UserSettings/
 obj/
 .vs/
-Packages/
-Packages.meta
 NuGet/
 NuGet.config
 NuGet.config.meta
