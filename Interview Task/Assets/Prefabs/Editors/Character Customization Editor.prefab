@@ -44,23 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9a506434518974983a6eb0ff79f490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hairs:
-  - id: AfroMedium
-    icon: {fileID: 21300000, guid: 09363ac7843d4514a8c84cbb691517df, type: 3}
-    views:
-      _front: {fileID: 21300000, guid: 09363ac7843d4514a8c84cbb691517df, type: 3}
-      _back: {fileID: 21300000, guid: d4ea74754ed4c1f4699edac6b95d14fd, type: 3}
-      _left: {fileID: 0}
-      _right: {fileID: 21300000, guid: bc0ade9e13bcd0f4f9e46625b05ab011, type: 3}
-    price: 0
-  - id: AfroShort
-    icon: {fileID: 21300000, guid: 2ced7448050a1f7419bde280f17cb6a1, type: 3}
-    views:
-      _front: {fileID: 21300000, guid: 2ced7448050a1f7419bde280f17cb6a1, type: 3}
-      _back: {fileID: 21300000, guid: 35793da481c0e904b91943cb9184fa12, type: 3}
-      _left: {fileID: 0}
-      _right: {fileID: 21300000, guid: 0f213168a4712b941ae5795a229b72f4, type: 3}
-    price: 0
+  _hairs: []
   _facialHairs: []
   _heads: []
   _eyes: []

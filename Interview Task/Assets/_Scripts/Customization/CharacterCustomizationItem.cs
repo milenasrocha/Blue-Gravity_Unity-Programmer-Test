@@ -5,12 +5,22 @@ using UnityEngine.UI;
 namespace LittleSimWorld.Characters
 {
     [Serializable]
-    public abstract class CharacterCustomizationItem
+    public abstract class CharacterCustomizationItem : ScriptableObject
     {
         public string id; //I'll be using this as dictionary keys
-        public Sprite icon; //it seems in the game all the icons are just the front view
+        [SerializeField] Sprite _icon; //optional. if not filled it'll get the front view
+        public Sprite icon
+        {
+            get
+            {
+                if (_icon == null)
+                    return views.front;
+
+                return _icon;
+            }
+            set => _icon = value;
+        }
         public Views<Sprite> views;
-        public int price; //this shouldnt be here. items not encessarily have prices, only when theyre at the store
 
         public abstract void ApplyTo(CharacterView characterView);
 
