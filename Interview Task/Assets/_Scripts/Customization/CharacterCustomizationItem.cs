@@ -8,7 +8,9 @@ namespace LittleSimWorld.Characters
     public abstract class CharacterCustomizationItem : ScriptableObject
     {
         public string id; //I'll be using this as dictionary keys
-        [SerializeField] Sprite _icon; //optional. if not filled it'll get the front view
+        public new string name;
+
+        [SerializeField] Sprite _icon; //optional. uses front view if == null
         public Sprite icon
         {
             get
@@ -20,6 +22,7 @@ namespace LittleSimWorld.Characters
             }
             set => _icon = value;
         }
+
         public Views<Sprite> views;
 
         public abstract void ApplyTo(CharacterView characterView);
