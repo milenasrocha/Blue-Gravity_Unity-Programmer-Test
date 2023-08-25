@@ -11,10 +11,13 @@ namespace LittleSimWorld
 
         protected virtual void Start()
         {
-            interactable.onInteract.AddListener((character) => canvas.SetActive(true));
-            interactable.onInteractionStopped.AddListener((character) => canvas.SetActive(false));
+            interactable.onInteract.AddListener((character) => ShowCanvas());
+            interactable.onInteractionStopped.AddListener((character) => HideCanvas());
         }
 
         protected virtual void StopInteraction() => interactable.StopInteraction();
+
+        public void ShowCanvas() => canvas.SetActive(true);
+        public void HideCanvas() => canvas.SetActive(false);
     }
 }
