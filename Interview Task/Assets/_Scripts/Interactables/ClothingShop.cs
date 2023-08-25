@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace LittleSimWorld
 {
-    public class Shop : Interactable
+    public class ClothingShop : Interactable
     {
         Dictionary<string, int> items;
         //can open the shop UI by calling it in script (on Interact()) OR you can fill in the UnityEvent on inspector

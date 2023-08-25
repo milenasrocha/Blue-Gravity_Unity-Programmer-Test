@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LittleSimWorld
 {
-    public class Wardrobe : Interactable
+    public class ClothingEditor : Interactable
     {
         public void Open() => Interact();
         public void Close() => StopInteraction();

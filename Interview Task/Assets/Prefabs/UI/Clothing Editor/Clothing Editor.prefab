@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 6934349543034295263}
   - component: {fileID: 7515214238180415797}
   m_Layer: 5
-  m_Name: Wardrobe
+  m_Name: Clothing Editor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
