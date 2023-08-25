@@ -14,7 +14,6 @@ namespace LittleSimWorld
         public void OnMovement(InputAction.CallbackContext context) => Movement = context.ReadValue<Vector2>();
 
         public static InputAction Interact => GetInputAction("Interact");
-        public static InputAction Cancel => GetInputAction("Cancel");
         #endregion Gameplay
 
 
