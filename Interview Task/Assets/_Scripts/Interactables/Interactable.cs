@@ -7,8 +7,8 @@ namespace LittleSimWorld
     //default implementation class
     public class Interactable : MonoBehaviour, IInteractable
     {
+        [SerializeField] new string name;
         [SerializeField] bool isInteractable = true;
-        [SerializeField] bool listenForCancel;
 
         [Space]
         
@@ -23,18 +23,14 @@ namespace LittleSimWorld
                 return;
 
             onInteract.Invoke(character);
-
-            if (listenForCancel)
-            {
-                InputReader.Cancel.performed += (callback) => StopInteraction(character);
-                InputReader.Cancel.performed -= (callback) => StopInteraction(character);
-            }
         }
 
         public void StopInteraction() => StopInteraction(PlayerController.Instance.character);
-        public void StopInteraction(Character character)
+        public void StopInteraction(Character character) => StopInteraction(character, true);
+        void StopInteraction(Character character, bool notify = true)
         {
-            onInteractionStopped.Invoke(character);
+            if(notify)
+                onInteractionStopped.Invoke(character);
         }
     }
 }

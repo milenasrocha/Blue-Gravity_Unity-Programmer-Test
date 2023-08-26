@@ -30,7 +30,7 @@ namespace LittleSimWorld.Characters
         public void ApplyTo(Views<SpriteRenderer> targetViews)
         {
             if(targetViews.front != null)
-            targetViews.front.sprite = views.front;
+                targetViews.front.sprite = views.front;
             if(targetViews.back != null)
                 targetViews.back.sprite = views.back;
             if(targetViews.left != null)
