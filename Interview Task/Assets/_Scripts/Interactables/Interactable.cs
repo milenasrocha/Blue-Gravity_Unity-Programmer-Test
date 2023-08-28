@@ -22,14 +22,14 @@ namespace LittleSimWorld
             if (!isInteractable)
                 return;
 
-            onInteract.Invoke(character);
+           if (onInteract != null)
+                onInteract.Invoke(character);
         }
 
         public void StopInteraction() => StopInteraction(PlayerController.Instance.character);
-        public void StopInteraction(Character character) => StopInteraction(character, true);
-        void StopInteraction(Character character, bool notify = true)
+        public virtual void StopInteraction(Character character)
         {
-            if(notify)
+            if (onInteractionStopped != null)
                 onInteractionStopped.Invoke(character);
         }
     }

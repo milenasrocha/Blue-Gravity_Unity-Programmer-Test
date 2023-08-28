@@ -1037,7 +1037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8839525201506229410}
-  - component: {fileID: 5223096121622566062}
+  - component: {fileID: 644043435048098384}
   m_Layer: 5
   m_Name: Clothing Shop
   m_TagString: Untagged
@@ -1066,7 +1066,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5223096121622566062
+--- !u!114 &644043435048098384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1075,10 +1075,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8839525201506229405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac1cc4991891944ba18eec38e6d1fce, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef2af2759b61b94789aaff23f1e2b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
   canvas: {fileID: 6259900689644812871}
 --- !u!1 &8850687479216213122
 GameObject:

@@ -123,17 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &390219889 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7217428697743513709, guid: d3ed45c790e83ac45bde6dd3fedaffcc, type: 3}
-  m_PrefabInstance: {fileID: 7217428697596563484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b419fee80b4039744b2f9010bb96c2bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!1001 &73480266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4196507166394783328, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_Name
+      value: Clothing Editor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783328, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196507166394783359, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3562a07bfbb2a545b968cc6ccf46170, type: 3}
 --- !u!1 &479613246
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,10 +781,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 6515879892368090416, guid: a289310322fa1864780a75917c89379e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6515879892368090444, guid: a289310322fa1864780a75917c89379e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -819,12 +865,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7638170842769423736, guid: a289310322fa1864780a75917c89379e, type: 3}
-      propertyPath: shop
-      value: 
-      objectReference: {fileID: 390219889}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a289310322fa1864780a75917c89379e, type: 3}
+--- !u!114 &6515879893161101712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 334334422392086523, guid: a289310322fa1864780a75917c89379e, type: 3}
+  m_PrefabInstance: {fileID: 6515879893161101709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef2af2759b61b94789aaff23f1e2b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7217428697596563484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -876,6 +929,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7217428697743513709, guid: d3ed45c790e83ac45bde6dd3fedaffcc, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 6515879893161101712}
     - target: {fileID: 7217428697743513715, guid: d3ed45c790e83ac45bde6dd3fedaffcc, type: 3}
       propertyPath: m_Name
       value: Clothing Shop
