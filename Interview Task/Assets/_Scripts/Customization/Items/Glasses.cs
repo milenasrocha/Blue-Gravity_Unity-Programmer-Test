@@ -7,6 +7,6 @@ namespace LittleSimWorld.Characters
     [CreateAssetMenu(fileName = "Glasses", menuName = "Character Customization Item/Clothing/Glasses", order = 2)]
     public class Glasses : CharacterCustomizationItem
     {
-        public override void ApplyTo(CharacterView character) => ApplyTo(character.glasses);
+        protected override void ApplyViewsTo(CharacterView characterViews) => views.ApplyTo(characterViews.glasses);
     }
 }

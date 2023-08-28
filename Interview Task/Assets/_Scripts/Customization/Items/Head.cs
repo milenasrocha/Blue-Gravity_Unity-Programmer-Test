@@ -7,6 +7,6 @@ namespace LittleSimWorld.Characters
     [CreateAssetMenu(fileName = "Head", menuName = "Character Customization Item/Appearance/Head", order = 3)]
     public class Head : CharacterCustomizationItem
     {
-        public override void ApplyTo(CharacterView character) => ApplyTo(character.head);
+        protected override void ApplyViewsTo(CharacterView character) => views.ApplyTo(character.head);
     }
 }

@@ -7,6 +7,6 @@ namespace LittleSimWorld.Characters
     [CreateAssetMenu(fileName = "Facial Hair", menuName = "Character Customization Item/Appearance/Facial Hair", order = 2)]
     public class FacialHair : CharacterCustomizationItem
     {
-        public override void ApplyTo(CharacterView character) => ApplyTo(character.facialHair);
+        protected override void ApplyViewsTo(CharacterView characterViews) => views.ApplyTo(characterViews.facialHair);
     }
 }

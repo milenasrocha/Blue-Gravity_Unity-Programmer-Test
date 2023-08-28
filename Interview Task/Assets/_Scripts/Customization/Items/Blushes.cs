@@ -7,6 +7,6 @@ namespace LittleSimWorld.Characters
     [CreateAssetMenu(fileName = "Blushes", menuName = "Character Customization Item/Appearance/Blushes", order = 7)]
     public class Blushes : CharacterCustomizationItem
     {
-        public override void ApplyTo(CharacterView character) => ApplyTo(character.blushes);
+        protected override void ApplyViewsTo(CharacterView characterView) => views.ApplyTo(characterView.blushes);
     }
 }
