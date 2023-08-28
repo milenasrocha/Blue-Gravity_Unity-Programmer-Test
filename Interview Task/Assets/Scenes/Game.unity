@@ -536,7 +536,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1787118956}
-  - component: {fileID: 1787118957}
   m_Layer: 0
   m_Name: Logger
   m_TagString: Untagged
@@ -559,20 +558,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1787118957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787118955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e590ddcc6d74e4c8db697a1a786fc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1001 &888377405036996452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888377406447378652, guid: 2e7b165256742e24e9859d1f6c163e78, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 888377406447378652, guid: 2e7b165256742e24e9859d1f6c163e78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -675,11 +660,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b72522d8133843941bceeafdd5d99558, type: 2}
     - target: {fileID: 2981936194742698030, guid: e052cc473c72d6641977a08b944ecddc, type: 3}
       propertyPath: m_Name
-      value: Character Customization Editor
+      value: Character Customization Items Editor
       objectReference: {fileID: 0}
     - target: {fileID: 2981936194742698031, guid: e052cc473c72d6641977a08b944ecddc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2981936194742698031, guid: e052cc473c72d6641977a08b944ecddc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -745,6 +730,10 @@ PrefabInstance:
     - target: {fileID: 6515879892368090416, guid: a289310322fa1864780a75917c89379e, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515879892368090416, guid: a289310322fa1864780a75917c89379e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6515879892368090444, guid: a289310322fa1864780a75917c89379e, type: 3}
       propertyPath: m_Pivot.x
