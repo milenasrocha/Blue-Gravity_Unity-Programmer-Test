@@ -980,17 +980,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canRotate: 1
+  viewParent: {fileID: 5692478203146018372}
   views:
     _front: {fileID: 2371924778930056297}
     _back: {fileID: 2844264663510133747}
     _left: {fileID: 0}
     _right: {fileID: 256034677377410709}
-  facingDirection: 1
-  fullCharacter:
-    _front: {fileID: 2371924778930056297}
-    _back: {fileID: 2844264663510133747}
-    _left: {fileID: 0}
-    _right: {fileID: 256034677377410709}
+  facingDirection: 0
   hair:
     _front: {fileID: 6304509078366050945}
     _back: {fileID: 1724097756263849262}
@@ -1426,7 +1422,7 @@ GameObject:
   - component: {fileID: 7223078060288595947}
   - component: {fileID: 4850903175473473196}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Views
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
